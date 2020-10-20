@@ -11,4 +11,4 @@ g++ entertext.cpp  -lsfml-graphics -lsfml-window -lsfml-system
 ./a.out
 ```
 
-
+*(Font OpenSans from Google Fonts)[https://fonts.google.com/specimen/Open+Sans]*
