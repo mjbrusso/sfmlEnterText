@@ -1,5 +1,5 @@
 # sfmlEnterText
-Sample code for entering text in a game in C ++ with SFML
+Sample code for entering text in a game in C++ with SFML
 ## Build
 
 ```c++
