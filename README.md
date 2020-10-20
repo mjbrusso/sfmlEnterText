@@ -3,13 +3,13 @@ Sample code for entering text in a C++/[SFML](https://www.sfml-dev.org/) game.
 ## Build
 
 ```c++
-g++ entertext.cpp  -lsfml-graphics -lsfml-window -lsfml-system
+g++ entertext.cpp  -o entertext -lsfml-graphics -lsfml-window -lsfml-system
 ```
 
 ## Run
 ```bash
-./a.out
+./entertext
 ```
 
-
+## Credits
 [Font OpenSans from Google Fonts](https://fonts.google.com/specimen/Open+Sans)
