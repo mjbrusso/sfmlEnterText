@@ -8,19 +8,15 @@ using namespace std;
 
 bool processInput(sf::Event ev, string &text) {
     if (ev.type == sf::Event::TextEntered) {
-        auto ch = ev.text.unicode;  // get the char
-        if (ch == 8) {              // is BACKSPACE?
-            if (!text.empty()) {    // Name is not empty?
-                text.pop_back();    // Remove last char
-            }
-        } else if (ch == 13) {  // is ENTER?
-            return false;       // Cancel editing
-        } else {
-            if (isprint(ch))         // Is it a printable char?
-                text.push_back(ch);  // Insert the new char
-        }
+        auto ch = ev.text.unicode;       // get the char
+        if (ch == 8 && !text.empty()) {  // is BACKSPACE and has a char?
+            text.pop_back();             // Remove last char
+        } else if (ch == 13)             // is ENTER?
+            return false;                // Cancel editing
+        else if (isprint(ch))            // Is it a printable char?
+            text.push_back(ch);          // Insert the new char
     }
-    return true;
+    return true;  // Continue editing
 }
 
 int main() {
@@ -39,6 +35,7 @@ int main() {
         while (window.pollEvent(ev)) {
             if (ev.type == sf::Event::Closed || (ev.type == sf::Event::KeyPressed && ev.key.code == sf::Keyboard::Escape)) {
                 window.close();
+                return 0;
             } else if (isEditing) {
                 isEditing = processInput(ev, playerName);  // this function does the job
             }
